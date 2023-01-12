@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <h2>{{ title }}</h2>
 </template>
 <script>
@@ -10,4 +10,3 @@ export default {
   methods: {},
 };
 </script>
-<style lang=""></style>
