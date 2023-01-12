@@ -38,6 +38,7 @@ export default {
         day: date.toLocaleDateString(),
         reminder: false,
       };
+      this.taskTitle = '';
       console.log(newTask);
       this.$emit('add-task', newTask);
     },
