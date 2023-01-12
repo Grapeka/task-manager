@@ -1,5 +1,5 @@
 <template>
-  <button @click="onClick()" :style="{ background: color }" class="btn">
+  <button :style="{ background: color }" class="btn">
     {{ text }}
   </button>
 </template>
@@ -11,21 +11,21 @@ export default {
     text: String,
     color: String,
   },
-  methods: {
-    onClick() {
-      console.log('Button clicked!');
-    },
-  },
 };
 </script>
 
 <style>
 .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
   padding: 0.7rem;
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
