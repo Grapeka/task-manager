@@ -2,7 +2,8 @@
   <div class="container">
     <div class="content">
       <div class="header">
-        <Header title="Task manager" /> <Button text="Add task" color="green" />
+        <Header title="Task manager" />
+        <AddTask @add-task="addTask" />
       </div>
       <div class="tasks-section">
         <Tasks
@@ -16,17 +17,17 @@
 </template>
 
 <script>
-import Button from '../components/Button.vue';
 import Header from '../components/Header.vue';
 import Tasks from '../components/Tasks.vue';
+import AddTask from '../components/AddTask.vue';
 import { mockTask } from '@/mocks/tasks';
 
 export default {
   name: 'HomePage',
   components: {
-    Button,
     Header,
     Tasks,
+    AddTask,
   },
   data() {
     return {
@@ -37,6 +38,10 @@ export default {
     this.tasks = mockTask;
   },
   methods: {
+    addTask(task) {
+      this.tasks.push(task);
+    },
+
     deleteTask(id) {
       if (!confirm('Are you sure?')) return;
       this.tasks = this.tasks.filter((task) => task.id !== id);
@@ -51,7 +56,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .container {
   margin-top: 25px;
   width: 90vw;
@@ -66,6 +71,7 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  padding: 15px 0;
 }
 
 .tasks-section {
