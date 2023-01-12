@@ -7,6 +7,7 @@ export default {
   props: {
     title: String,
   },
+  methods: {},
 };
 </script>
 <style lang=""></style>
