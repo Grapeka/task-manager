@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <Page>
     <div class="content">
       <div class="header">
         <Header title="Task manager" />
@@ -11,15 +11,15 @@
           @toggle-reminder="toggleReminder"
           :tasks="tasks"
         />
-      </div>
-    </div>
-  </div>
+      </div></div
+  ></Page>
 </template>
 
 <script>
 import Header from '../components/Header.vue';
 import Tasks from '../components/Tasks.vue';
 import AddTask from '../components/AddTask.vue';
+import Page from '../layouts/Page.vue';
 import { mockTask } from '@/mocks/tasks';
 
 export default {
@@ -28,6 +28,7 @@ export default {
     Header,
     Tasks,
     AddTask,
+    Page,
   },
   data() {
     return {
@@ -57,11 +58,6 @@ export default {
 </script>
 
 <style scope>
-.container {
-  margin-top: 25px;
-  width: 90vw;
-  border: 1px solid black;
-}
 .content {
   margin: 15px 25px;
 }
